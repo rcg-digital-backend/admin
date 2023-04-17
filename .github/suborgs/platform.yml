@@ -9,7 +9,7 @@ suborgteams:
   - platform-developers
   - platform-admins
   - platform
-# These settings are synced to GitHub by https://github.com/github/safe-settings
+# These settings are synced to GitHub. by https://github.com/github/safe-settings
 
 repository:
   # This is the settings that need to be applied to all repositories in the org

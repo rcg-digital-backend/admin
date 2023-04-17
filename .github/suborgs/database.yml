@@ -122,9 +122,9 @@ branches:
         users: []
         teams: []
 # See the docs (https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-autolinks-to-reference-external-resources) for a description of autolinks and replacement values.
-autolinks:
-  - key_prefix: "SHIP-"
-    url_template: "https://jira.rccl.com/browse/SHIP-<num>"
+# autolinks:
+#   - key_prefix: "SHIP-"
+#     url_template: "https://jira.rccl.com/browse/SHIP-<num>"
 validator:
   #pattern: '[a-zA-Z0-9_-]+_[a-zA-Z0-9_-]+.*'
   pattern: "[a-zA-Z0-9_-]+"
