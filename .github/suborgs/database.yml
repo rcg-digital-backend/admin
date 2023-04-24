@@ -6,9 +6,8 @@ suborgrepos:
 # You can use Glob patterns
 
 suborgteams:
-  - database-cluster-developer
-  - database-couchbase-admins
-  - database
+  - database-developers-ad-sync
+  - database-leads
 # These settings are synced to GitHub by https://github.com/github/safe-settings
 
 repository:
