@@ -111,11 +111,11 @@ branches:
           apps: []
           users: []
           teams:
-            - rcg-digital-backend/database-leads
+            - "@rcg-digital-backend/database-leads"
         dismissal_restrictions:
           users: []
           teams:
-            - rcg-digital-backend/database-leads
+            - "@rcg-digital-backend/database-leads"
       # Required. Require status checks to pass before merging. Set to null to disable
       required_status_checks:
         # Required. Require branches to be up to date before merging.
@@ -123,7 +123,7 @@ branches:
         # Required. The list of status checks to require in order to merge into this branch
         contexts: []
       # Required. Enforce all configured restrictions for administrators. Set to true to enforce required status checks for repository administrators. Set to null to disable.
-      enforce_admins:
+      enforce_admins: false
       # Required. Restrict who can push to this branch. Team and user restrictions are only available for organization-owned repositories. Set to null to disable.
       restrictions:
 # See the docs (https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-autolinks-to-reference-external-resources) for a description of autolinks and replacement values.
