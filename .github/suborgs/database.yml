@@ -110,12 +110,12 @@ branches:
         bypass_pull_request_allowances:
           apps: []
           users: []
-          teams:
-            - rcg-digital-backend/database-leads
+          teams: 
+            - database-leads
         dismissal_restrictions:
           users: []
           teams:
-            - rcg-digital-backend/database-leads
+            - database-leads
       # Required. Require status checks to pass before merging. Set to null to disable
       required_status_checks:
         # Required. Require branches to be up to date before merging.
