@@ -127,9 +127,6 @@ branches:
       enforce_admins: false
       # Required. Restrict who can push to this branch. Team and user restrictions are only available for organization-owned repositories. Set to null to disable.
       restrictions:
-        apps: []
-        users: []
-        teams: []
 # See the docs (https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-autolinks-to-reference-external-resources) for a description of autolinks and replacement values.
 autolinks:
   - key_prefix: "SHIP-"
