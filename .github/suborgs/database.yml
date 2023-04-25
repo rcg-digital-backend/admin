@@ -111,11 +111,11 @@ branches:
           apps: []
           users: []
           teams:
-            - "@rcg-digital-backend/database-leads"
+            - rcg-digital-backend/database-leads
         dismissal_restrictions:
           users: []
           teams:
-            - "@rcg-digital-backend/database-leads"
+            - rcg-digital-backend/database-leads
       # Required. Require status checks to pass before merging. Set to null to disable
       required_status_checks:
         # Required. Require branches to be up to date before merging.
