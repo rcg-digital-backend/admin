@@ -114,11 +114,11 @@ branches:
           apps: []
           users: []
           teams: 
-            - payment-leads
+            - payment-admins-ad-sync
         dismissal_restrictions:
           users: []
           teams:
-            - payment-leads
+            - payment-admins-ad-sync
       # Required. Require status checks to pass before merging. Set to null to disable
       required_status_checks:
         # Required. Require branches to be up to date before merging.
