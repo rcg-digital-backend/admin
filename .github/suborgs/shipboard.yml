@@ -111,7 +111,7 @@ branches:
           apps: []
           users: []
           teams: 
-            - dshipboard-engineering-leads
+            - shipboard-engineering-leads
         dismissal_restrictions:
           users: []
           teams:
