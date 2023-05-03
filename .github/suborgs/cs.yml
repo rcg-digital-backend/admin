@@ -35,7 +35,7 @@ repository:
   # If projects are disabled for the organization, passing `true` will cause an API error.
   has_projects: false
   # Either `true` to enable the wiki for this repository, `false` to disable it.
-  has_wiki: true
+  has_wiki: false
   # The default branch for this repository.
   # default_branch: main
   # Desired language or platform [.gitignore template](https://github.com/github/gitignore)
@@ -99,13 +99,13 @@ branches:
       # Required. Require at least one approving review on a pull request, before merging. Set to null to disable.
       required_pull_request_reviews:
         # The number of approvals required. (1-6)
-        required_approving_review_count: 2
+        required_approving_review_count: 1
         # Dismiss approved reviews automatically when a new commit is pushed.
         dismiss_stale_reviews: true
         # Blocks merge until code owners have reviewed.
         require_code_owner_reviews: false
         # Whether the most recent reviewable push must be approved by someone other than the person who pushed it.
-        require_last_push_approval: true
+        require_last_push_approval: false
         # Specify which users and teams can dismiss pull request reviews. Pass an empty dismissal_restrictions object to disable. User and team dismissal_restrictions are only available for organization-owned repositories. Omit this parameter for personal repositories.
         # Allow specific users, teams, or apps to bypass pull request requirements. Set to null to disable.
         bypass_pull_request_allowances:
@@ -129,8 +129,8 @@ branches:
       restrictions: null
 # See the docs (https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-autolinks-to-reference-external-resources) for a description of autolinks and replacement values.
 autolinks:
-  - key_prefix: "SHIP-"
-    url_template: "https://jira.rccl.com/browse/SHIP-<num>"
+  - key_prefix: "CS-"
+    url_template: "https://jira.rccl.com/browse/CS-<num>"
 validator:
   #pattern: '[a-zA-Z0-9_-]+_[a-zA-Z0-9_-]+.*'
   pattern: "[a-zA-Z0-9_-]+"
