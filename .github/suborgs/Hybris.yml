@@ -112,6 +112,7 @@ branches:
           apps: []
           users: 
             - rccl-github
+            - Dbahago
           teams: 
             - hybris-leads
         dismissal_restrictions:
