@@ -8,6 +8,7 @@ suborgrepos:
 suborgteams:
   - ssh-developers-ad-sync
   - ssh-leads
+  - ssh-admins-ad-sync
 # These settings are synced to GitHub by https://github.com/github/safe-settings
 
 repository:
@@ -109,13 +110,16 @@ branches:
         # Allow specific users, teams, or apps to bypass pull request requirements. Set to null to disable.
         bypass_pull_request_allowances:
           apps: []
-          users: []
+          users:
+            - rccl-github
           teams: 
             - ssh-leads
+            - ssh-admins-ad-sync
         dismissal_restrictions:
           users: []
           teams:
             - ssh-leads
+            - ssh-admins-ad-sync
       # Required. Require status checks to pass before merging. Set to null to disable
       required_status_checks:
         # Required. Require branches to be up to date before merging.
