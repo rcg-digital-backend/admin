@@ -135,8 +135,12 @@ branches:
       restrictions: null
 # See the docs (https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-autolinks-to-reference-external-resources) for a description of autolinks and replacement values.
 autolinks:
-  - key_prefix: "CE-"
-    url_template: "https://jira.rccl.com/browse/CE-<num>"
+  - key_prefix: "MEGA-"
+    url_template: "https://jira.rccl.com/browse/MEGA-<num>"
+  - key_prefix: "DP-"
+    url_template: "https://jira.rccl.com/browse/DP-<num>"
+  - key_prefix: "DGS-"
+    url_template: "https://jira.rccl.com/browse/DGS-<num>"
 validator:
   #pattern: '[a-zA-Z0-9_-]+_[a-zA-Z0-9_-]+.*'
   pattern: "[a-zA-Z0-9_-]+"
