@@ -141,5 +141,4 @@ autolinks:
   - key_prefix: "DGS-"
     url_template: "https://jira.rccl.com/browse/DGS-<num>"
 validator:
-  #pattern: '[a-zA-Z0-9_-]+_[a-zA-Z0-9_-]+.*'
   pattern: "[a-zA-Z0-9_-]+"
