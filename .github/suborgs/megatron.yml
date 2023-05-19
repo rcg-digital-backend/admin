@@ -10,7 +10,6 @@ suborgteams:
   - megatron-developers-ad-sync
   - megatron-leads
   - megatron-collaborators
-  - megatron
 
 # These settings are synced to GitHub. by https://github.com/github/safe-settings
 
