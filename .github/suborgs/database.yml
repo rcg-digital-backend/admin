@@ -8,6 +8,7 @@ suborgrepos:
 suborgteams:
   - database-developers-ad-sync
   - database-leads
+  - database-admins-ad-sync
 # These settings are synced to GitHub by https://github.com/github/safe-settings
 
 repository:
