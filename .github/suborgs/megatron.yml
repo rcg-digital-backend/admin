@@ -92,6 +92,15 @@ milestones:
     description: milestone-description
     # The state of the milestone. Either `open` or `closed`
     state: open
+teams:
+ - name: megatron-admins-ad-sync
+   permission: admin
+ - name: megatron
+   permission: push
+ - name: megatron-developers-ad-sync
+   permission: push
+ - name: service-accounts
+   permission: pull
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
@@ -132,6 +141,44 @@ branches:
       enforce_admins: false
       # Required. Restrict who can push to this branch. Team and user restrictions are only available for organization-owned repositories. Set to null to disable.
       restrictions: null
+  - name: develop
+    # https://docs.github.com/en/rest/reference/branches#update-branch-protection
+    # Branch Protection settings. Set to null to disable
+    protection:
+      # Required. Require at least one approving review on a pull request, before merging. Set to null to disable.
+      required_pull_request_reviews:
+        # The number of approvals required. (1-6)
+        required_approving_review_count: 2
+        # Dismiss approved reviews automatically when a new commit is pushed.
+        dismiss_stale_reviews: true
+        # Blocks merge until code owners have reviewed.
+        require_code_owner_reviews: false
+        # Whether the most recent reviewable push must be approved by someone other than the person who pushed it.
+        require_last_push_approval: true
+        # Specify which users and teams can dismiss pull request reviews. Pass an empty dismissal_restrictions object to disable. User and team dismissal_restrictions are only available for organization-owned repositories. Omit this parameter for personal repositories.
+        # Allow specific users, teams, or apps to bypass pull request requirements. Set to null to disable.
+        bypass_pull_request_allowances:
+          apps: []
+          users:
+            - rccl-github
+          teams:
+            - megatron-admins-ad-sync
+            - megatron-leads
+        dismissal_restrictions:
+          users: []
+          teams:
+            - megatron-admins-ad-sync
+            - megatron-leads
+      # Required. Require status checks to pass before merging. Set to null to disable
+      required_status_checks:
+        # Required. Require branches to be up to date before merging.
+        strict: true
+        # Required. The list of status checks to require in order to merge into this branch
+        contexts: []
+      # Required. Enforce all configured restrictions for administrators. Set to true to enforce required status checks for repository administrators. Set to null to disable.
+      enforce_admins: false
+      # Required. Restrict who can push to this branch. Team and user restrictions are only available for organization-owned repositories. Set to null to disable.
+      restrictions: null  
 # See the docs (https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-autolinks-to-reference-external-resources) for a description of autolinks and replacement values.
 autolinks:
   - key_prefix: "MEGA-"
