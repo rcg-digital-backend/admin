@@ -91,12 +91,14 @@ milestones:
     # The state of the milestone. Either `open` or `closed`
     state: open
 teams:
- - name: platform-leads
-   permission: admin
- - name: platform
-   permission: push
- - name: service-accounts
-   permission: pull
+  - name: platform-leads
+    permission: admin
+  - name: platform
+    permission: push
+  - name: service-accounts
+    permission: pull
+  - name: database
+    permission: pull
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
@@ -118,7 +120,7 @@ branches:
         bypass_pull_request_allowances:
           apps: []
           users: []
-          teams: 
+          teams:
             - platform-leads
         dismissal_restrictions:
           users: []
