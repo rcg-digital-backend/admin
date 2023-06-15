@@ -2,7 +2,7 @@
 
 # List of repos that belong to the suborg
 suborgrepos:
-  - safe.*
+  - megatron.ai-data*
 # You can use Glob patterns
 
 # suborgteams:
@@ -125,6 +125,7 @@ branches:
           apps: []
           users:
             - rccl-github
+            - Dbahago
           teams:
             - megatron-admins-ad-sync
             - megatron-leads
