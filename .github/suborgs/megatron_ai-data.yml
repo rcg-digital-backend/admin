@@ -2,7 +2,7 @@
 
 # List of repos that belong to the suborg
 suborgrepos:
-  - megatron.ai-data.messages-notifications-manager
+  - megatron-ai-data-test
 # You can use Glob patterns
 
 suborgteams:
