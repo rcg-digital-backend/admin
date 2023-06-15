@@ -2,7 +2,7 @@
 
 # List of repos that belong to the suborg
 suborgrepos:
-  - megatron.*
+# - megatron.*
 # You can use Glob patterns
 
 suborgteams:
@@ -93,14 +93,14 @@ milestones:
     # The state of the milestone. Either `open` or `closed`
     state: open
 teams:
- - name: megatron-admins-ad-sync
-   permission: admin
- - name: megatron
-   permission: push
- - name: megatron-developers-ad-sync
-   permission: push
- - name: service-accounts
-   permission: pull
+  - name: megatron-admins-ad-sync
+    permission: admin
+  - name: megatron
+    permission: push
+  - name: megatron-developers-ad-sync
+    permission: push
+  - name: service-accounts
+    permission: pull
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
@@ -178,7 +178,7 @@ branches:
       # Required. Enforce all configured restrictions for administrators. Set to true to enforce required status checks for repository administrators. Set to null to disable.
       enforce_admins: false
       # Required. Restrict who can push to this branch. Team and user restrictions are only available for organization-owned repositories. Set to null to disable.
-      restrictions: null  
+      restrictions: null
 # See the docs (https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-autolinks-to-reference-external-resources) for a description of autolinks and replacement values.
 autolinks:
   - key_prefix: "MEGA-"
