@@ -2,7 +2,7 @@
 
 # List of repos that belong to the suborg
 suborgrepos:
-  - megatron-ai-data-test
+  - megatron.ai-data*
 # You can use Glob patterns
 
 suborgteams:
