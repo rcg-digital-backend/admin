@@ -5,11 +5,11 @@ suborgrepos:
   - safe.*
 # You can use Glob patterns
 
-suborgteams:
-  - megatron-admins-ad-sync
-  - megatron-developers-ad-sync
-  - megatron-leads
-  - megatron-collaborators
+# suborgteams:
+#   - megatron-admins-ad-sync
+#   - megatron-developers-ad-sync
+#   - megatron-leads
+#   - megatron-collaborators
 
 # These settings are synced to GitHub. by https://github.com/github/safe-settings
 
@@ -92,17 +92,17 @@ milestones:
     description: milestone-description
     # The state of the milestone. Either `open` or `closed`
     state: open
-teams:
-  - name: megatron-admins-ad-sync
-    permission: admin
-  - name: megatron
-    permission: push
-  - name: megatron-developers-ad-sync
-    permission: push
-  - name: service-accounts
-    permission: pull
-  - name: platform
-    permission: pull
+# teams:
+#   - name: megatron-admins-ad-sync
+#     permission: admin
+#   - name: megatron
+#     permission: push
+#   - name: megatron-developers-ad-sync
+#     permission: push
+#   - name: service-accounts
+#     permission: pull
+#   - name: platform
+#     permission: pull
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
