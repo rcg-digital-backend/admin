@@ -139,8 +139,32 @@ teams:
     permission: pull
   - name: megatron-collaborators
     permission: push
+    include:
+      - megatron.telemetry-spring-common
+      - megatron.telemetry-spring-webflux
+      - megatron.telemetry-spring
+      - megatron.telemetry-spring-mvc
+      - megatron.telemetry-serverside
+      - megatron.telemetry-react-native
+      - megatron.telemetry-net-core
+      - megatron.telemetry-lagom
+      - megatron.telemetry-java
+      - megatron.excalibur-ios-foundation-lib-telemetry-sample-app
+      - megatron.etl-telemetry
+      - megatron.react-native-telemetry
+      - megatron.telemetry-javascript-dev-kit
+      - megatron.telemetry-java-examples
+      - megatron.telemetry-angular-docs
+      - megatron.telemetry-angular-nestjs
+      - megatron.telemetry-dashboards
+      - megatron.telemetry-client-payload
+      - megatron.telemetry-common
   - name: payment
     permission: push
+    include:
+      - megatron.telemetry-java
+      - megatron.telemetry-spring-webflux
+      - megatron.telemetry-spring-common
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
