@@ -107,10 +107,16 @@ teams:
     permission: pull
   - name: payment
     permission: push
+    include:
+      - megatron.commons.commons
   - name: ssh-admins-ad-sync
     permission: push
+    include:
+      - megatron.commons.argocd-library
   - name: ssh
     permission: push
+    include:
+      - megatron.commons.argocd-library
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
