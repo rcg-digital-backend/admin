@@ -103,6 +103,12 @@ teams:
     permission: push
   - name: service-accounts
     permission: pull
+  - name: megatron-web-developers-ad-sync
+    permission: push
+  - name: megatron-web-admins-ad-sync
+    permission: push
+  - name: connected-ship
+    permission: push
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
