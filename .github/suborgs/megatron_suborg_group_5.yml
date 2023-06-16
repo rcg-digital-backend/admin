@@ -98,6 +98,7 @@ milestones:
     description: milestone-description
     # The state of the milestone. Either `open` or `closed`
     state: open
+# Manage repo team membership
 teams:
   - name: megatron-admins-ad-sync
     permission: admin
@@ -109,6 +110,18 @@ teams:
     permission: pull
   - name: megatron-web-developers-ad-sync
     permission: push
+    include:
+      - megatron.virtual-queue.manifests
+      - megatron.virtual-queue.crew-web
+      - megatron.vape.manifests
+      - megatron.wearables.manifests
+  - name: megatron-web-admins-ad-sync
+    permission: push
+    include:
+      - megatron.virtual-queue.manifests
+      - megatron.virtual-queue.crew-web
+      - megatron.vape.manifests
+      - megatron.wearables.manifests
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
