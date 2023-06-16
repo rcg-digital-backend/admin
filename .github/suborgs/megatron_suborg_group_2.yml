@@ -107,10 +107,26 @@ teams:
     permission: pull
   - name: megatron-web-developers-ad-sync
     permission: push
+    include:
+      - megatron.digital-concierge.manifests
+      - megatron.digital-concierge.agent-interface-ui
   - name: megatron-web-admins-ad-sync
     permission: push
+    include:
+      - megatron.digital-concierge.manifests
+      - megatron.digital-concierge.agent-interface-ui
   - name: connected-ship
     permission: push
+    include:
+      - megatron.core.bookmark
+  - name: megatron-collaborators
+    permission: push
+    include:
+      - megatron.core.telemetry-monitor
+  - name: platform-leads
+    permission: push
+    include:
+      - megatron.commons.argocd-library
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
