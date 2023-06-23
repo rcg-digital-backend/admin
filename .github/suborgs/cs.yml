@@ -5,9 +5,9 @@ suborgrepos:
   - cs.*
 # You can use Glob patterns
 
-suborgteams:
-  - connected-ship-admin-ad-sync
-  - connected-ship-collaborators
+# suborgteams:
+#   - connected-ship-admin-ad-sync
+#   - connected-ship-collaborators
 
 # These settings are synced to GitHub. by https://github.com/github/safe-settings
 
@@ -90,6 +90,14 @@ milestones:
     description: milestone-description
     # The state of the milestone. Either `open` or `closed`
     state: open
+# Manage repo team membership
+teams:
+  - name: connected-ship-admin-ad-sync
+    permission: admin
+  - name: connected-ship
+    permission: push
+  - name: service-accounts
+    permission: pull
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
@@ -111,7 +119,7 @@ branches:
         bypass_pull_request_allowances:
           apps: []
           users: []
-          teams: 
+          teams:
             - connected-ship-admin-ad-sync
         dismissal_restrictions:
           users: []
