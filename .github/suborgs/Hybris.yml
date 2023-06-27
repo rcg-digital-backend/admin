@@ -6,9 +6,9 @@ suborgrepos:
   - commerce.*
 # You can use Glob patterns
 
-suborgteams:
-  - hybris-developers-ad-sync
-  - hybris-leads
+# suborgteams:
+#   - hybris-developers-ad-sync
+#   - hybris-leads
 # These settings are synced to GitHub by https://github.com/github/safe-settings
 
 repository:
@@ -90,6 +90,17 @@ milestones:
     description: milestone-description
     # The state of the milestone. Either `open` or `closed`
     state: open
+teams:
+  - name: hybris
+    permission: push
+  - name: hybris-admins-ad-sync
+    permission: admin
+  - name: hybris-developers-ad-sync
+    permission: push
+  - name: hybris-collaborators
+    permission: push
+  - name: service-accounts
+    permission: pull
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
@@ -110,9 +121,9 @@ branches:
         # Allow specific users, teams, or apps to bypass pull request requirements. Set to null to disable.
         bypass_pull_request_allowances:
           apps: []
-          users: 
+          users:
             - rccl-github
-          teams: 
+          teams:
             - hybris-leads
         dismissal_restrictions:
           users: []
