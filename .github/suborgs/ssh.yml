@@ -5,10 +5,10 @@ suborgrepos:
   - ssh.*
 # You can use Glob patterns
 
-suborgteams:
-  - ssh-developers-ad-sync
-  - ssh-leads
-  - ssh-admins-ad-sync
+# suborgteams:
+#   - ssh-developers-ad-sync
+#   - ssh-leads
+#   - ssh-admins-ad-sync
 # These settings are synced to GitHub by https://github.com/github/safe-settings
 
 repository:
@@ -90,6 +90,15 @@ milestones:
     description: milestone-description
     # The state of the milestone. Either `open` or `closed`
     state: open
+teams:
+  - name: ssh
+    permission: push
+  - name: ssh-admins-ad-sync
+    permission: admin
+  - name: ssh-developers-ad-sync
+    permission: push
+  - name: service-accounts
+    permission: pull
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
@@ -112,7 +121,7 @@ branches:
           apps: []
           users:
             - rccl-github
-          teams: 
+          teams:
             - ssh-leads
             - ssh-admins-ad-sync
         dismissal_restrictions:
