@@ -99,6 +99,27 @@ teams:
     permission: push
   - name: hybris-collaborators
     permission: push
+  - name: megatron
+    permission: pull
+    include:
+      - commerce.telemetry-ts-metadata
+      - commerce.telemetry-ts-library-builder
+      - commerce.telemetry-ts-axios
+      - commerce.telemetry-ts-events
+      - commerce.telemetry-ts-angular
+      - commerce.telemetry-json-schema
+      - commerce.telemetry-jdk-website-js
+      - commerce.telemetry-jdk-website-ts
+  - name: megatron-collaborators
+    permission: pull
+    include:
+      - commerce.telemetry-ts-metadata
+      - commerce.telemetry-ts-library-builder
+      - commerce.telemetry-ts-axios
+      - commerce.telemetry-ts-events
+      - commerce.telemetry-ts-angular
+      - commerce.telemetry-json-schema
+      - commerce.telemetry-jdk-website-js
   - name: service-accounts
     permission: pull
 branches:
