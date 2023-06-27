@@ -5,11 +5,11 @@ suborgrepos:
   - iam.*
 # You can use Glob patterns
 
-suborgteams:
-  - iam-admins-ad-sync
-  - iam-collaborators
-  - iam-developers-ad-sync
-  - iam-leads
+# suborgteams:
+#   - iam-admins-ad-sync
+#   - iam-collaborators
+#   - iam-developers-ad-sync
+#   - iam-leads
 
 # These settings are synced to GitHub. by https://github.com/github/safe-settings
 
@@ -92,6 +92,16 @@ milestones:
     description: milestone-description
     # The state of the milestone. Either `open` or `closed`
     state: open
+# Manage repo team membership
+teams:
+  - name: iam
+    permission: push
+  - name: iam-admins-ad-sync
+    permission: admin
+  - name: iam-developers-ad-sync
+    permission: push
+  - name: service-accounts
+    permission: pull
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
@@ -113,7 +123,7 @@ branches:
         bypass_pull_request_allowances:
           apps: []
           users: []
-          teams: 
+          teams:
             - iam-admins-ad-sync
         dismissal_restrictions:
           users: []
