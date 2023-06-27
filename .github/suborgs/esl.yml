@@ -5,11 +5,11 @@ suborgrepos:
   - esl.*
 # You can use Glob patterns
 
-suborgteams:
-  - esl-admins-ad-sync
-  - esl-collaborators
-  - esl-developers-ad-sync
-  - esl-leads
+# suborgteams:
+#   - esl-admins-ad-sync
+#   - esl-collaborators
+#   - esl-developers-ad-sync
+#   - esl-leads
 
 # These settings are synced to GitHub. by https://github.com/github/safe-settings
 
@@ -92,6 +92,16 @@ milestones:
     description: milestone-description
     # The state of the milestone. Either `open` or `closed`
     state: open
+# Manage repo team membership
+teams:
+  - name: esl
+    permission: push
+  - name: esl-admins-ad-sync
+    permission: admin
+  - name: esl-developers-eur-ad-sync
+    permission: push
+  - name: service-accounts
+    permission: pull
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
@@ -114,7 +124,7 @@ branches:
           apps: []
           users:
             - rccl-github
-          teams: 
+          teams:
             - esl-admins-ad-sync
         dismissal_restrictions:
           users: []
