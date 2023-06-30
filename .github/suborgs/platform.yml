@@ -2,7 +2,73 @@
 
 # List of repos that belong to the suborg
 suborgrepos:
-  - platform.*
+  - platform.portworx-k8s
+  - platform.dkp-cluster
+  - platform.k8s-cluster-state
+  - platform.external-secrets-k8s
+  - platform.f5-k8s
+  - platform.kommander-k8s
+  - platform.terraform-aws-modules
+  - platform.terraform-aws-live
+  - platform.cert-manager
+  - platform.argocd-library
+  - platform.confluent-kafka-k8s
+  - platform.splunk-k8s
+  - megatron.notifications.manager
+  - platform.harbor-k8s
+  - platform.cloudwatch-agent-k8s
+  - platform.argocd
+  - platform.k8s-deployments
+  - platform.quarterly-reboot
+  - platform.controlcenter-standalone
+  # - platform.kubelogin # exclude
+  - platform.konvoy
+  - platform.jenkins-k8s
+  - platform.iris
+  - platform.apigee-user-mgmt
+  - platform.f5-automator
+  - platform.architecture-diagrams
+  - platform.grafana_configurator_role
+  - platform.library
+  - platform.java_open
+  - platform.ansible_galaxy_example
+  - platform.velero-k8s
+  - platform.minio-automator
+  - platform.apigee-automator
+  - platform.nexus-k8s
+  - platform.sonarqube-k8s
+  - platform.dkp-image
+  - platform.base-image
+  - platform.convert-to-jenkins-job
+  - platform.argo-rollouts
+  - platform.jenkins-job-archives
+  - platform.platform-admission-webhook-k8s
+  - platform.vmware-exporter-k8s
+  - platform.terraform-github-live
+  - platform.terraform
+  - platform.sequence-scheduler
+  - platform.safe-settings
+  - platform.redis-k8s
+  - platform.rabbitmq-k8s
+  - platform.prometheus-nexus-exporter
+  - platform.postgres-operator
+  - platform.platform-admission-webhook
+  - platform.nginx-proxy
+  - platform.nginx-k8s
+  - platform.minio-k8s
+  - platform.k8s-toolkit
+  - platform.groovy-blocks-maven-sample
+  - platform.groovy-blocks
+  - platform.grafana-automation-dashboards
+  - platform.gatekeeper-library
+  - platform.etcd-backup
+  - platform.contrast
+  - platform.consul-k8s
+  - platform.ci-pipeline-maven
+  - platform.appdynamics-k8s
+  - platform.grafana-dashboards
+  
+
 # You can use Glob patterns
 
 # suborgteams:
