@@ -117,6 +117,33 @@ teams:
     permission: push
     # include:
     #   - megatron.commons.argocd-library
+  - name: platform
+    permission: push
+    include:
+      - megatron.commons.apigee-parent-poms
+      - megatron.commons.playground
+      - megatron.commons.commons
+      - megatron.commons.pipelines
+      - megatron.commons.argocd-library
+      - megatron.commons.continental
+      - megatron.commons.manifests
+      - megatron.commons.docs
+      - megatron.commons.apigee-env-config
+      - megatron.commons.reactive-spring-cache-extension
+      - megatron.commons.spring-boot-microservice-maven-archetype
+      - megatron.commons.postman
+      - megatron.commons.pizza
+      - megatron.commons.middleware-replicator
+      - megatron.commons.middleware-kafka-client
+      - megatron.commons.middleware-internationalization
+      - megatron.commons.middleware-error-catalog
+      - megatron.commons.middleware-couchbase
+      - megatron.commons.middleware-common
+      - megatron.commons.middleware-circuit-breaker
+      - megatron.commons.apigee
+      - megatron.commons.archetypes
+      - megatron.commons.service-config
+      - megatron.core.common-shared
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
