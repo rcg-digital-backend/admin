@@ -120,7 +120,8 @@ branches:
         # Allow specific users, teams, or apps to bypass pull request requirements. Set to null to disable.
         bypass_pull_request_allowances:
           apps: []
-          users: []
+          users:
+            - rccl-github
           teams:
             - payment-admins-ad-sync
         dismissal_restrictions:
