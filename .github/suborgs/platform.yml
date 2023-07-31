@@ -67,6 +67,7 @@ suborgrepos:
   - platform.ci-pipeline-maven
   - platform.appdynamics-k8s
   - platform.grafana-dashboards
+  - platform.helm-charts
   
 
 # You can use Glob patterns
