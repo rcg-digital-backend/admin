@@ -14,7 +14,6 @@ suborgrepos:
   - platform.argocd-library
   - platform.confluent-kafka-k8s
   - platform.splunk-k8s
-  - megatron.notifications.manager
   - platform.harbor-k8s
   - platform.cloudwatch-agent-k8s
   - platform.argocd
