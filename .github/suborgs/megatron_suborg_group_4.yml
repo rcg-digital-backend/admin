@@ -123,9 +123,7 @@ teams:
       - megatron.wearables.manifests
     permission: push
   - name: connected-ship
-    permission: push
-    include:
-      - megatron.guest-accounts.profiles
+    permission: pull
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
