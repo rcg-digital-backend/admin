@@ -105,7 +105,7 @@ teams:
   - name: service-accounts
     permission: pull
   - name: connected-ship
-    permission: pull
+    permission: push
   - name: megatron-web-developers-ad-sync
     permission: push
     include:
