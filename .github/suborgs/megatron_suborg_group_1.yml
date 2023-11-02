@@ -103,6 +103,8 @@ teams:
     permission: push
   - name: megatron-developers-ad-sync
     permission: push
+  - name: connected-ship
+    permission: pull
   - name: service-accounts
     permission: pull
   - name: payment
