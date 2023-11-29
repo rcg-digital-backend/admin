@@ -137,7 +137,7 @@ branches:
         # Dismiss approved reviews automatically when a new commit is pushed.
         dismiss_stale_reviews: true
         # Blocks merge until code owners have reviewed.
-        require_code_owner_reviews: false
+        require_code_owner_reviews: true
         # Whether the most recent reviewable push must be approved by someone other than the person who pushed it.
         require_last_push_approval: true
         # Specify which users and teams can dismiss pull request reviews. Pass an empty dismissal_restrictions object to disable. User and team dismissal_restrictions are only available for organization-owned repositories. Omit this parameter for personal repositories.
