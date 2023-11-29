@@ -67,7 +67,7 @@ suborgrepos:
   - platform.appdynamics-k8s
   - platform.grafana-dashboards
   - platform.selenium-grid-k8s
-  
+  - platform.minio-standalone
 
 # You can use Glob patterns
 
