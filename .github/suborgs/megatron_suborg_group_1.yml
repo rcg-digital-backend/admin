@@ -107,6 +107,8 @@ teams:
     permission: pull
   - name: service-accounts
     permission: pull
+  - name: hybris
+    permission: push
   - name: payment
     permission: push
     include:
