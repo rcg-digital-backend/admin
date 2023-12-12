@@ -8,6 +8,7 @@ suborgrepos:
   - megatron.notifications*
   - megatron.virtual-queue*
   - megatron.wearables*
+  - shipboard-programming-tool.*
 
 # You can use Glob patterns
 
