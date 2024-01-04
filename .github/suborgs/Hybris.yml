@@ -99,6 +99,8 @@ teams:
     permission: push
   - name: hybris-collaborators
     permission: push
+  - name: megatron-developers-ad-sync
+    permission: push
   - name: megatron
     permission: pull
     include:
