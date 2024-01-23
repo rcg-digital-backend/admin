@@ -117,7 +117,7 @@ teams:
       - megatron.commons.apigee-parent-poms
       - megatron.commons.argocd-library
       - megatron.commons.commons
-      - megatron.commons.docs
+      - commons.docs
   - name: ssh-admins-ad-sync
     permission: push
     # include:
@@ -136,7 +136,7 @@ teams:
       - megatron.commons.argocd-library
       - megatron.commons.continental
       - megatron.commons.manifests
-      - megatron.commons.docs
+      - commons.docs
       - megatron.commons.apigee-env-config
       - megatron.commons.reactive-spring-cache-extension
       - megatron.commons.spring-boot-microservice-maven-archetype
