@@ -4,6 +4,7 @@
 suborgrepos:
   - megatron.photo*
   - megatron.digital-shoreex.*
+  - megatron.employee.test
   - megatron.employee*
 
 # You can use Glob patterns
