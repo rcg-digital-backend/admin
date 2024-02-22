@@ -122,6 +122,8 @@ teams:
       - commerce.telemetry-ts-angular
       - commerce.telemetry-json-schema
       - commerce.telemetry-jdk-website-js
+  - name: guardians
+    permission: push
   - name: service-accounts
     permission: pull
 branches:

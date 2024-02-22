@@ -94,6 +94,8 @@ teams:
     permission: push
   - name: shipboard-engineering-admins-ad-sync
     permission: admin
+  - name: guardians
+    permission: push
   - name: service-accounts
     permission: pull
 branches:
@@ -117,7 +119,7 @@ branches:
         bypass_pull_request_allowances:
           apps: []
           users: []
-          teams: 
+          teams:
             - shipboard-engineering-leads
         dismissal_restrictions:
           users: []
