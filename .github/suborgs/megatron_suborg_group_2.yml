@@ -50,7 +50,7 @@ repository:
 
   # Either `true` to allow squash-merging pull requests, or `false` to prevent
   # squash-merging.
-  allow_squash_merge: true
+  allow_squash_merge: false
   # Either `true` to allow merging pull requests with a merge commit, or `false`
   # to prevent merging pull requests with merge commits.
   allow_merge_commit: true
