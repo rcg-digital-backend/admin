@@ -70,6 +70,9 @@ repository:
 labels:
   # Labels: define labels for Issues and Pull Requests
   include:
+    - name: hello-world
+      color: FF0000
+      description: A hello world label.
     - name: bug
       color: CC0000
       description: An issue with the system
@@ -212,5 +215,7 @@ autolinks:
     url_template: "https://jira.rccl.com/browse/DP-<num>"
   - key_prefix: "DGS-"
     url_template: "https://jira.rccl.com/browse/DGS-<num>"
+  - key_prefix: "RTB-"
+    url_template: "https://jira.rccl.com/browse/RTB-<num>"
 validator:
   pattern: "[a-zA-Z0-9_-]+"
