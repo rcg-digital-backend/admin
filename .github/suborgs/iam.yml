@@ -100,6 +100,8 @@ teams:
     permission: admin
   - name: iam-developers-ad-sync
     permission: push
+  - name: megatron
+    permission: pull
   - name: service-accounts
     permission: pull
 branches:
