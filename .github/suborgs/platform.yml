@@ -2,11 +2,14 @@
 
 # List of repos that belong to the suborg
 suborgrepos:
+  - platform.appdynamics-otel-collectors-k8s
+  - platform.appdynamics-otel-k8s
   - platform.portworx-k8s
   - platform.dkp-cluster
   - platform.k8s-cluster-state
   - platform.external-secrets-k8s
   - platform.f5-k8s
+  - platform.graphql-cosmo-k8s
   - platform.kommander-k8s
   - platform.terraform-aws-modules
   - platform.terraform-aws-live
