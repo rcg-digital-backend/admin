@@ -4,6 +4,7 @@
 suborgrepos:
   - platform.appdynamics-otel-collectors-k8s
   - platform.appdynamics-otel-k8s
+  - platform.aqua-k8s
   - platform.portworx-k8s
   - platform.dkp-cluster
   - platform.k8s-cluster-state
