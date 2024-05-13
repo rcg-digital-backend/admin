@@ -6,7 +6,6 @@ suborgrepos:
   - megatron.guest-checkin*
   - megatron.guest-native*
 
-
 # You can use Glob patterns
 
 # suborgteams:
