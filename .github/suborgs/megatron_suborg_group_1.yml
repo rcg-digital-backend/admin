@@ -6,7 +6,6 @@ suborgrepos:
   - megatron.ai-data*
   - megatron.common*
   - megatron.content-services*
-  - megatron.reservations*
 
 # You can use Glob patterns
 
