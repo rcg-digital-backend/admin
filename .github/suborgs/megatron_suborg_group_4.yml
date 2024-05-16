@@ -106,6 +106,8 @@ teams:
     permission: push
   - name: megatron-developers-ad-sync
     permission: push
+  - name: hybris
+    permission: push
   - name: guardians
     permission: push
   - name: service-accounts
