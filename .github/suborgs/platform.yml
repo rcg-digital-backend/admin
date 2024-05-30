@@ -19,6 +19,7 @@ suborgrepos:
   - platform.confluent-kafka-k8s
   - platform.splunk-k8s
   - platform.harbor-k8s
+  - platform.harbor-standalone
   - platform.cloudwatch-agent-k8s
   - platform.argocd
   - platform.k8s-deployments
