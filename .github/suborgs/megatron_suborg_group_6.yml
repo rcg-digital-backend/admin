@@ -148,12 +148,10 @@ branches:
             - rccl-github
           teams:
             - megatron-admins-ad-sync
-            - megatron-leads
         dismissal_restrictions:
           users: []
           teams:
             - megatron-admins-ad-sync
-            - megatron-leads
       # Required. Require status checks to pass before merging. Set to null to disable
       required_status_checks:
         # Required. Require branches to be up to date before merging.
@@ -210,3 +208,12 @@ autolinks:
     url_template: "https://jira.rccl.com/browse/DGS-<num>"
 validator:
   pattern: "[a-zA-Z0-9_-]+"
+repositories:
+  - name: mock.checker
+    branches:
+      - default:
+        protection:
+          required_pull_request_reviews:
+            required_approving_review_count: 1
+            dismiss_stale_reviews: true
+            require_code_owner_reviews: false
