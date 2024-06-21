@@ -4,7 +4,6 @@
 suborgrepos:
   - megatron.guest-accounts*
   - megatron.guest-checkin*
-  - megatron.guest-native*
 
 # You can use Glob patterns
 
