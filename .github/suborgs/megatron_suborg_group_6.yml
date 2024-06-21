@@ -2,56 +2,18 @@
 
 # List of repos that belong to the suborg
 suborgrepos:
+  - mock.*
+  - megatron.mock.*
   - megatron.megatron*
-  - megatron.ai-etl
-  - megatron.ai-knowledge-graph-service
-  - megatron.ai-neo4j-extensions
-  - megatron.ai-vc-kg-etl
-  - megatron.ai-video-analytics-ml
-  - megatron.ai-virtual-concierge-bot
-  - megatron.ai-virtual-concierge-dal
-  - megatron.ai-virtual-concierge-edl
   - megatron.ansible
-  - megatron.ansible-automation
-  - megatron.design-templates
-  - megatron.dsx-analytics-extract-scripts
-  - megatron.dsx-etl-validation
-  - megatron.dsx-realm-triggers
-  - megatron.ee-automation-cli
-  - megatron.ee-automation-microservices
-  - megatron.ee-graphql-demo
-  - megatron.ee-graphql-foundation
-  - megatron.ee-manifests
-  - megatron.ee-team-site
-  - megatron.engineering-excellence-service-config
   - megatron.etl-telemetry
-  - megatron.eu-data
-  - megatron.eu-website-released
-  - megatron.excalibur-ios-foundation-lib-telemetry-sample-app
-  - megatron.excalibur-u-screencasts
-  - megatron.excalibur-webapp-config
-  - megatron.ezproxy
   - megatron.git-submodule-tool
-  - megatron.grafana-dashboards
-  - megatron.graphql-demo-server
-  - megatron.graphql-demo-service
-  - megatron.guide-jenkins-auto-build-setup
-  - megatron.haproxy-monitor
   - megatron.hybris-dashboard-frontend
-  - megatron.log4j2-rollingfile-delete
-  - megatron.poc-hybris-ecommerce
-  - megatron.react-native-eds
-  - megatron.react-native-eds-2
   - megatron.react-native-spark
   - megatron.react-native-spark-example
   - megatron.react-native-spark-ui
   - megatron.react-native-spark-ui-tsdx
   - megatron.react-native-telemetry
-  - megatron.recommendation_engine-application
-  - megatron.recommendation_engine-graph
-  - megatron.run-book-generator
-  - megatron.runbook-monitor-service
-  - megatron.screencast-spring-mvc-instrumentation
 
 # You can use Glob patterns
 
@@ -143,11 +105,11 @@ milestones:
     # The state of the milestone. Either `open` or `closed`
     state: open
 teams:
+  - name: automation
+    permission: push
   - name: megatron-admins-ad-sync
     permission: admin
   - name: megatron
-    permission: push
-  - name: megatron-developers-ad-sync
     permission: push
   - name: guardians
     permission: push
@@ -158,10 +120,6 @@ teams:
     include:
       - megatron.megatron.manifests
       - megatron.megatron.cybertron
-  - name: megatron-collaborators
-    permission: push
-    include:
-      - megatron.megatron.wiremock-manager
   - name: platform
     permission: push
     include:
@@ -228,12 +186,10 @@ branches:
             - rccl-github
           teams:
             - megatron-admins-ad-sync
-            - megatron-leads
         dismissal_restrictions:
           users: []
           teams:
             - megatron-admins-ad-sync
-            - megatron-leads
       # Required. Require status checks to pass before merging. Set to null to disable
       required_status_checks:
         # Required. Require branches to be up to date before merging.
