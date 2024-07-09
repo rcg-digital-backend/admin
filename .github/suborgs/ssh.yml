@@ -95,6 +95,10 @@ teams:
     permission: push
   - name: ssh-admins-ad-sync
     permission: admin
+  - name: ssh-leads
+    permission: admin
+    include:
+      - ssh.manifests
   - name: ssh-developers-ad-sync
     permission: push
   - name: service-accounts
