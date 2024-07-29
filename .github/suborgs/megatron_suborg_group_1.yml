@@ -106,7 +106,7 @@ teams:
     permission: push
     include:
       - megatron.commons.manifests
-      - megatron.commons.rules-engine
+      - commons.rules-engine
   - name: megatron-developers-ad-sync
     permission: push
   - name: guardians
