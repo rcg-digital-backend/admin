@@ -103,6 +103,8 @@ teams:
     permission: admin
   - name: megatron
     permission: push
+  - name: megatron-argonaut
+    permission: push
   - name: megatron-developers-ad-sync
     permission: push
   - name: hybris
