@@ -47,6 +47,9 @@ repository:
   # For example, "Haskell".
   # gitignore_template: node
 
+  # Either `true` to allow forking, or `false` to prevent
+  # forking.
+  allow_forking: true
   # Either `true` to allow squash-merging pull requests, or `false` to prevent
   # squash-merging.
   allow_squash_merge: true
