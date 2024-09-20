@@ -168,6 +168,12 @@ branches:
 autolinks:
   - key_prefix: "HYBRIS-"
     url_template: "https://jira.rccl.com/browse/HYBRIS-<num>"
+  - key_prefix: "ONVAC-"
+    url_template: "https://jira.rccl.com/browse/ONVAC-<num>"
+  - key_prefix: "MYC-"
+    url_template: "https://jira.rccl.com/browse/MYC-<num>"
+  - key_prefix: "RTB-"
+    url_template: "https://jira.rccl.com/browse/RTB-<num>"
 validator:
   #pattern: '[a-zA-Z0-9_-]+_[a-zA-Z0-9_-]+.*'
   pattern: "[a-zA-Z0-9_-]+"
