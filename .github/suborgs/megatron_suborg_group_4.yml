@@ -2,7 +2,9 @@
 
 # List of repos that belong to the suborg
 suborgrepos:
+  - guest-accounts.*
   - megatron.guest-accounts*
+  - guest-checkin.*
   - megatron.guest-checkin*
 
 # You can use Glob patterns
