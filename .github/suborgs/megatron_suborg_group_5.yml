@@ -2,7 +2,8 @@
 
 # List of repos that belong to the suborg
 suborgrepos:
-  - megatron.guest-request*
+  - guest-request.*
+  - megatron.guest-request.*
   - megatron.kids-club*
   - megatron.vape*
   - megatron.notifications*
