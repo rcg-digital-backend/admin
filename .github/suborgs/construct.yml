@@ -114,14 +114,6 @@ teams:
     permission: pull
   - name: connected-ship
     permission: pull
-  - name: megatron-web-developers-ad-sync
-    permission: push
-    include:
-      - construct.manifests
-  - name: megatron-web-admins-ad-sync
-    include:
-      - construct.manifests
-    permission: push
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
