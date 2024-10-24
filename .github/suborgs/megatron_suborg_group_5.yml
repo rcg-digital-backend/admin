@@ -7,6 +7,7 @@ suborgrepos:
   - megatron.kids-club*
   - megatron.vape*
   - megatron.notifications*
+  - notifications*
   - megatron.virtual-queue*
   - megatron.wearables*
   - shipboard-programming-tool.*
