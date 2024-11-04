@@ -119,12 +119,6 @@ teams:
     permission: push
   - name: payment
     permission: push
-    include:
-      - megatron.commons.apigee-env-config
-      - megatron.commons.apigee-parent-poms
-      - megatron.commons.argocd-library
-      - megatron.commons.commons
-      - commons.docs
   - name: ssh-admins-ad-sync
     permission: push
     # include:
