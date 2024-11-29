@@ -5,6 +5,7 @@ suborgrepos:
   - megatron.core*
   - megatron.digital-checkin*
   - megatron.digital-concierge*
+  - megatron.digital-messaging*
 
 # You can use Glob patterns
 
