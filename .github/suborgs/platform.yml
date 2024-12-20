@@ -75,6 +75,7 @@ suborgrepos:
   - platform.selenium-grid-k8s
   - platform.minio-standalone
   - platform.pdc-agent-k8s
+  - platform.smtp-relay
   - platform.utilities
 
 # You can use Glob patterns
