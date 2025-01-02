@@ -113,6 +113,8 @@ teams:
     permission: push
   - name: guardians
     permission: push
+  - name: mobile
+    permission: pull
   - name: service-accounts
     permission: pull
   - name: connected-ship

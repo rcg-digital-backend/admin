@@ -106,6 +106,8 @@ teams:
     permission: push
   - name: guardians
     permission: push
+  - name: mobile
+    permission: pull
   - name: service-accounts
     permission: pull
   - name: megatron-web-developers-ad-sync
