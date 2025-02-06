@@ -109,6 +109,8 @@ teams:
       - commons.rules-engine
   - name: megatron-developers-ad-sync
     permission: push
+  - name: automation
+    permission: pull
   - name: guardians
     permission: push
   - name: connected-ship
