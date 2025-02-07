@@ -111,6 +111,8 @@ teams:
     permission: admin
   - name: megatron
     permission: push
+  - name: automation
+    permission: pull
   - name: guardians
     permission: push
   - name: mobile
