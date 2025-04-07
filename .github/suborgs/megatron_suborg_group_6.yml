@@ -105,6 +105,8 @@ milestones:
     # The state of the milestone. Either `open` or `closed`
     state: open
 teams:
+  - name: megatron-argonaut
+    permission: push
   - name: automation
     permission: push
   - name: megatron-admins-ad-sync
