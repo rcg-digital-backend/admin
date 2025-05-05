@@ -1,0 +1,124 @@
+suborgrepos:
+  - commons.*
+  - megatron.common* # TODO: Rename these repos and their Jenkins jobs.
+  - construct.*
+  - content-services*
+  - megatron.content-services* # TODO: Rename these repos and their Jenkins jobs.
+  - core*
+  - megatron.core* # TODO: Rename these repos and their Jenkins jobs.
+  - digital-checkin*
+  - megatron.digital-checkin* # TODO: Rename these repos and their Jenkins jobs.
+  - digital-concierge*
+  - megatron.digital-concierge* # TODO: Rename these repos and their Jenkins jobs.
+  - digital-photo*
+  - megatron.photo* # TODO: Rename these repos and their Jenkins jobs.
+  - digital-shoreex.*
+  - megatron.digital-shoreex.* # TODO: Rename these repos and their Jenkins jobs.
+  - employee*
+  - megatron.employee* # TODO: Rename these repos and their Jenkins jobs.
+  - guest-accounts.*
+  - megatron.guest-accounts* # TODO: Rename these repos and their Jenkins jobs.
+  - guest-checkin.*
+  - megatron.guest-checkin* # TODO: Rename these repos and their Jenkins jobs.
+  - guest-request.*
+  - megatron.guest-request.* # TODO: Rename these repos and their Jenkins jobs.
+  - kids-club*
+  - megatron.kids-club* # TODO: Rename these repos and their Jenkins jobs.
+  - notifications*
+  - megatron.notifications* # TODO: Rename these repos and their Jenkins jobs.
+  - shipboard-programming-tool.*
+  - vape*
+  - megatron.vape* # TODO: Rename these repos and their Jenkins jobs.
+  - virtual-queue*
+  - megatron.virtual-queue* # TODO: Rename these repos and their Jenkins jobs.
+  - wearables*
+  - megatron.wearables* # TODO: Rename these repos and their Jenkins jobs.
+  - megatron.ai-data* # TODO: Sunset these repos.
+  - megatron.digital-messaging* # TODO: Review need.
+  - megatron.employee.test # TODO: Review need.
+suborgteams:
+  - backend-guest
+repository:
+  auto_init: true
+  topics: [backend, guest, services]
+  private: true
+  has_issues: true
+  has_projects: false
+  has_wiki: true
+  allow_squash_merge: false
+  allow_merge_commit: true
+  allow_rebase_merge: false
+  allow_auto_merge: false
+  delete_branch_on_merge: true
+labels:
+  include:
+    - name: bugfix
+      color: '#CC0000'
+      description: A label for a bug.
+    - name: feature
+      color: "#336699"
+      description: A label for a feature.
+  exclude:
+    - name: ^guest-
+    - name: ^crew-
+teams:
+  - name: backend-guest
+    permission: push
+  - name: backend-guest-admins
+    permission: admin
+  - name: megatron-admins-ad-sync # TODO: Delete this entry once megatron-admins-ad-sync is renamed to backend-guest-admins.
+    permission: admin
+  - name: backend-guest-devs
+    permission: push
+  - name: megatron-developers-ad-sync # TODO: Delete this entry once megatron-admins-ad-sync is renamed to backend-guest-admins.
+    permission: push
+  - name: automation
+    permission: pull
+  - name: connected-ship
+    permission: pull
+  - name: guardians
+    permission: pull
+  - name: hybris
+    permission: pull
+  - name: megatron-web
+    permission: pull
+  - name: mobile
+    permission: pull
+  - name: service-accounts
+    permission: pull
+  - name: platform
+    permission: push
+branches:
+  - name: default
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 2
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+        require_last_push_approval: true
+        bypass_pull_request_allowances:
+          apps: []
+          users:
+            - rccl-github
+          teams:
+            - backend-guest-managers
+            - backend-guest-leads
+        dismissal_restrictions:
+          users: []
+          teams: []
+      required_status_checks:
+        strict: true
+        contexts: []
+      enforce_admins: false
+      restrictions: null
+autolinks:
+  - key_prefix: "DGS-"
+  - url_template: "https://jira.rccl.com/browse/DGS-<num>"
+  - key_prefix: "LOY-"
+    url_template: "https://jira.rccl.com/browse/LOY-<num>"
+  - key_prefix: "MEGA-"
+    url_template: "https://jira.rccl.com/browse/MEGA-<num>"
+  - key_prefix: "RTB-"
+    url_template: "https://jira.rccl.com/browse/RTB-<num>"
+validator:
+  pattern: "[a-zA-Z0-9_-]+"

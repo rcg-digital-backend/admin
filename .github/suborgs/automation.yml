@@ -1,5 +1,8 @@
 suborgrepos:
   - automation.*
+  - mock.*
+  - megatron.mock.*
+  - megatron.megatron*
 
 repository:
   auto_init: true

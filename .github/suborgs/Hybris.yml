@@ -101,6 +101,10 @@ teams:
     permission: push
   - name: automation
     permission: pull
+  - name: backend-guest
+    permission: pull
+  - name: backend-guest-devs
+    permission: push
   - name: megatron-developers-ad-sync
     permission: push
   - name: megatron
@@ -114,16 +118,6 @@ teams:
       - commerce.telemetry-json-schema
       - commerce.telemetry-jdk-website-js
       - commerce.telemetry-jdk-website-ts
-  - name: megatron-collaborators
-    permission: pull
-    include:
-      - commerce.telemetry-ts-metadata
-      - commerce.telemetry-ts-library-builder
-      - commerce.telemetry-ts-axios
-      - commerce.telemetry-ts-events
-      - commerce.telemetry-ts-angular
-      - commerce.telemetry-json-schema
-      - commerce.telemetry-jdk-website-js
   - name: guardians
     permission: push
   - name: service-accounts

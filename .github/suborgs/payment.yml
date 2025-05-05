@@ -98,6 +98,8 @@ teams:
     permission: push
   - name: payment-admins-ad-sync
     permission: admin
+  - name: backend-guest
+    permission: pull
   - name: megatron
     permission: pull
   - name: service-accounts
