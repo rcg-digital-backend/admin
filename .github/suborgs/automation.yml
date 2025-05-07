@@ -1,9 +1,6 @@
 suborgrepos:
   - automation.*
 
-suborgteams:
-  - automation
-
 repository:
   auto_init: true
   topics:
