@@ -16,3 +16,8 @@ jobs:
         with:
           organization: ${{ github.event.inputs.org }}
           token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: reports
+          path: |
+            ${{ steps.analyze_user_activity.outputs.report_csv }}
