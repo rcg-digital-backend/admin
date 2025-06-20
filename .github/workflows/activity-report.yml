@@ -3,7 +3,7 @@ name: Org Activity Report
 on:
   workflow_dispatch:
     inputs:
-      org:
+      organization:
         description: 'GitHub Organization'
         required: true
         default: 'rcg-digital-backend'
@@ -15,8 +15,8 @@ jobs:
       - id: scan_org
         uses: peter-murray/inactive-users-action@v1
         with:
-          organization: ${{ github.event.inputs.org }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          organization: ${{ github.event.inputs.organization }}
+          token: ${{ secrets.ORGANIZATION_AND_REPO_ACCESS_TOKEN }}
       - id: upload_report
         uses: actions/upload-artifact@v4.6.2
         with:
