@@ -16,7 +16,7 @@ jobs:
         uses: peter-murray/inactive-users-action@v1
         with:
           organization: ${{ github.event.inputs.organization }}
-          token: ${{ secrets.ORGANIZATION_AND_REPO_ACCESS_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - id: upload_report
         uses: actions/upload-artifact@v4.6.2
         with:
