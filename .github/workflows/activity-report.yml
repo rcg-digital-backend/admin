@@ -12,12 +12,14 @@ jobs:
   report:
     runs-on: ubuntu-latest
     steps:
-      - uses: peter-murray/inactive-users-action@v1
+      - id: scan_org
+        uses: peter-murray/inactive-users-action@v1
         with:
           organization: ${{ github.event.inputs.org }}
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/upload-artifact@v4.6.2
+      - id: upload_report
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: reports
           path: |
-            ${{ steps.analyze_user_activity.outputs.report_csv }}
+            ${{ steps.scan_org.outputs.report_csv }}
