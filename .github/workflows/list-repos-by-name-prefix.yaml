@@ -1,0 +1,75 @@
+name: Repo Prefix Report
+
+on:
+  workflow_dispatch:
+
+jobs:
+  find-repos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install GitHub CLI
+        uses: cli/cli-action@v2
+
+      - name: Find repos with prefixes
+        env:
+          GH_TOKEN: ${{ secrets.COMMONS_ORG_PAT }}
+        run: |
+          PREFIXES=(
+            "commons."
+            "megatron.common"
+            "construct."
+            "content-services"
+            "megatron.content-services"
+            "core"
+            "megatron.core"
+            "digital-checkin"
+            "megatron.digital-checkin"
+            "digital-concierge"
+            "megatron.digital-concierge"
+            "digital-photo"
+            "megatron.photo"
+            "digital-shoreex."
+            "megatron.digital-shoreex."
+            "employee"
+            "megatron.employee"
+            "guest-accounts."
+            "megatron.guest-accounts"
+            "guest-checkin."
+            "megatron.guest-checkin"
+            "guest-request."
+            "megatron.guest-request."
+            "kids-club"
+            "megatron.kids-club"
+            "notifications"
+            "megatron.notifications"
+            "shipboard-programming-tool."
+            "vape"
+            "megatron.vape"
+            "virtual-queue"
+            "megatron.virtual-queue"
+            "wearables"
+            "megatron.wearables"
+            "megatron.ai-data"
+            "megatron.digital-messaging"
+            "megatron.employee.test"
+          )
+          ORG="rcg-digital-backend"
+
+          echo "Matching repositories:" > repo-report.txt
+          gh repo list "$ORG" --limit 1500 --json name -q '.[].name' | while read -r repo; do
+            for prefix in "${PREFIXES[@]}"; do
+              if [[ "$repo" == $prefix* ]]; then
+                echo "$repo" >> repo-report.txt
+                break
+              fi
+            done
+          done
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: repo-prefix-report
+          path: repo-report.txt
