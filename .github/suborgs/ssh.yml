@@ -105,6 +105,8 @@ teams:
     permission: pull
   - name: megatron-argonaut
     permissions: pull
+  - name: backend-argonaut
+    permissions: pull
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
   - name: default
