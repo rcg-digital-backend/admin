@@ -1,0 +1,42 @@
+name: Suborg Repo Discovery
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-repo-lists:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: List matching repos per suborg
+        env:
+          GH_TOKEN: ${{ secrets.COMMONS_ORG_PAT }}
+        run: |
+          ORG="rcg-digital-backend"
+          mkdir reports
+
+          for file in .github/suborgs/*.yml; do
+            SUBORG=$(basename "$file" .yml)
+            echo "Processing $SUBORG from $file"
+
+            PREFIXES=$(yq e '.suborgrepos[]' "$file")
+
+            echo "Repos for $SUBORG:" > "reports/$SUBORG.txt"
+
+            gh repo list "$ORG" --limit 1000 --json name -q '.[].name' | while read -r repo; do
+              for prefix in $PREFIXES; do
+                if [[ "$repo" == $prefix* ]]; then
+                  echo "$repo" >> "reports/$SUBORG.txt"
+                  break
+                fi
+              done
+            done
+          done
+
+      - name: Upload all suborg reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: suborg-repo-reports
+          path: reports/
