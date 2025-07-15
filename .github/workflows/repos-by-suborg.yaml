@@ -12,9 +12,9 @@ jobs:
 
       - name: List matching repos per suborg
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.COMMONS_ORG_PAT }}
         run: |
-          ORG="your-org-name"
+          ORG="rcg-digital-backend"
           mkdir reports
 
           for file in .github/suborgs/*.yml; do
