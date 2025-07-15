@@ -36,8 +36,7 @@ suborgrepos:
   - megatron.ai-data* # TODO: Sunset these repos.
   - megatron.digital-messaging* # TODO: Review need.
   - megatron.employee.test # TODO: Review need.
-suborgteams:
-  - backend-guest
+
 repository:
   auto_init: true
   topics: [backend, guest, services]
@@ -50,6 +49,7 @@ repository:
   allow_rebase_merge: false
   allow_auto_merge: false
   delete_branch_on_merge: true
+
 labels:
   include:
     - name: bugfix
@@ -61,6 +61,7 @@ labels:
   exclude:
     - name: ^guest-
     - name: ^crew-
+
 teams:
   - name: backend-guest
     permission: push
@@ -88,6 +89,7 @@ teams:
     permission: pull
   - name: platform
     permission: push
+
 branches:
   - name: default
     protection:
@@ -111,6 +113,7 @@ branches:
         contexts: []
       enforce_admins: false
       restrictions: null
+
 autolinks:
   - key_prefix: "DGS-"
   - url_template: "https://jira.rccl.com/browse/DGS-<num>"
@@ -120,5 +123,6 @@ autolinks:
     url_template: "https://jira.rccl.com/browse/MEGA-<num>"
   - key_prefix: "RTB-"
     url_template: "https://jira.rccl.com/browse/RTB-<num>"
+
 validator:
   pattern: "[a-zA-Z0-9_-]+"
