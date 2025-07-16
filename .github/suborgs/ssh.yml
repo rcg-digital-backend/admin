@@ -103,8 +103,6 @@ teams:
     permission: push
   - name: service-accounts
     permission: pull
-  - name: megatron-argonaut
-    permissions: pull
   - name: backend-argonaut
     permissions: pull
 branches:

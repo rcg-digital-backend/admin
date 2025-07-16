@@ -67,11 +67,7 @@ teams:
     permission: push
   - name: backend-guest-admins
     permission: admin
-  - name: megatron-admins-ad-sync # TODO: Delete this entry once megatron-admins-ad-sync is renamed to backend-guest-admins.
-    permission: admin
   - name: backend-guest-devs
-    permission: push
-  - name: megatron-developers-ad-sync # TODO: Delete this entry once megatron-admins-ad-sync is renamed to backend-guest-admins.
     permission: push
   - name: automation
     permission: pull

@@ -102,8 +102,6 @@ teams:
     permission: push
   - name: backend-guest
     permission: pull
-  - name: megatron
-    permission: pull
   - name: service-accounts
     permission: pull
 branches:
