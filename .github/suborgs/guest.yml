@@ -64,7 +64,7 @@ labels:
 
 teams:
   - name: backend-guest
-    permission: push
+    permission: pull
   - name: backend-guest-admins
     permission: admin
   - name: backend-guest-devs

@@ -101,7 +101,9 @@ teams:
     permission: push
   - name: automation
     permission: pull
-  - name: backend-guest
+  - name: backend-guest-admins
+    permission: push
+  - name: backend-guest-devs
     permission: push
   - name: guardians
     permission: push

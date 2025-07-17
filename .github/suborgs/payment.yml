@@ -98,7 +98,9 @@ teams:
     permission: push
   - name: payment-admins-ad-sync
     permission: admin
-  - name: backend-guest
+  - name: backend-guest-admins
+    permission: push
+  - name: backend-guest-devs
     permission: pull
   - name: service-accounts
     permission: pull

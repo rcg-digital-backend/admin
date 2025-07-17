@@ -100,7 +100,9 @@ teams:
     permission: admin
   - name: iam-developers-ad-sync
     permission: push
-  - name: backend-guest
+  - name: backend-guest-admins
+    permission: push
+  - name: backend-guest-devs
     permission: pull
   - name: service-accounts
     permission: pull
