@@ -23,6 +23,7 @@ suborgrepos:
   - guest-request.*
   - megatron.guest-request.* # TODO: Rename these repos and their Jenkins jobs.
   - kids-club*
+  - loyalty.*
   - megatron.kids-club* # TODO: Rename these repos and their Jenkins jobs.
   - notifications*
   - megatron.notifications* # TODO: Rename these repos and their Jenkins jobs.
