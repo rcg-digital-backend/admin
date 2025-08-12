@@ -68,6 +68,10 @@ teams:
     permission: pull
   - name: backend-guest-admins
     permission: admin
+  - name: backend-guest-leads
+    permission: admin
+  - name: backend-guest-managers
+    permission: admin
   - name: backend-guest-devs
     permission: push
   - name: automation
