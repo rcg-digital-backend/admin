@@ -88,6 +88,8 @@ teams:
     permission: pull
   - name: service-accounts
     permission: pull
+  - name: payment
+    permission: push
   - name: platform
     permission: push
 
