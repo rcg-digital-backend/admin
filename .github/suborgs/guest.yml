@@ -83,7 +83,7 @@ teams:
   - name: hybris
     permission: pull
   - name: megatron-web
-    permission: pull
+    permission: push
   - name: mobile
     permission: pull
   - name: service-accounts
