@@ -119,7 +119,7 @@ branches:
 
 autolinks:
   - key_prefix: "DGS-"
-  - url_template: "https://jira.rccl.com/browse/DGS-<num>"
+    url_template: "https://jira.rccl.com/browse/DGS-<num>"
   - key_prefix: "LOY-"
     url_template: "https://jira.rccl.com/browse/LOY-<num>"
   - key_prefix: "MEGA-"
