@@ -1,0 +1,101 @@
+suborgrepos:
+  - franklin.*
+
+repository:
+  auto_init: true
+  topics: [backend, commerce, dcx, hybris, services, franklin]
+  private: true
+  visibility: private
+  has_issues: true
+  has_projects: false
+  has_wiki: true
+  allow_squash_merge: false
+  allow_merge_commit: true
+  allow_rebase_merge: false
+  allow_auto_merge: false
+  delete_branch_on_merge: true
+
+labels:
+  include:
+    - name: bugfix
+      color: '#CC0000'
+      description: A label for a bug.
+    - name: feature
+      color: "#336699"
+      description: A label for a feature.
+  exclude:
+    - name: ^commerce-
+
+teams:
+  - name: hybris
+    permission: push
+  - name: hybris-admins-ad-sync
+    permission: admin
+  - name: hybris-developers-ad-sync
+    permission: push
+  - name: hybris-collaborators
+    permission: push
+  - name: automation
+    permission: pull
+  - name: backend-guest-admins
+    permission: admin
+  - name: backend-guest-devs
+    permission: push
+  - name: guardians
+    permission: push
+  - name: service-accounts
+    permission: pull
+
+rulesets:
+  - name: "Protect Long-living Branches"
+    target: branch
+    enforcement: active
+    conditions:
+      ref_name:
+        include:
+          - main
+          - main-*
+          - develop
+          - develop-*
+          - release/*
+          - rel/*
+    bypass_actors:
+      - actor_type: RepositoryRole
+        actor_id: admin
+        bypass_mode: always
+      - actor_type: Team
+        actor_id: hybris-leads
+        bypass_mode: always
+      - actor_type: Integration
+        actor_id: 127404092
+        bypass_mode: always
+    rules:
+      - type: pull_request
+        parameters:
+          required_approving_review_count: 2
+          dismiss_stale_reviews_on_push: true
+          require_code_owner_review: true
+          require_last_push_approval: true
+      - type: required_status_checks
+        parameters:
+          strict_required_status_checks: true
+          required_status_checks: []
+
+autolinks:
+  - key_prefix: "HYBRIS-"
+    url_template: "https://jira.rccl.com/browse/HYBRIS-<num>"
+  - key_prefix: "ONVAC-"
+    url_template: "https://jira.rccl.com/browse/ONVAC-<num>"
+  - key_prefix: "MYC-"
+    url_template: "https://jira.rccl.com/browse/MYC-<num>"
+  - key_prefix: "RTB-"
+    url_template: "https://jira.rccl.com/browse/RTB-<num>"
+  - key_prefix: "HOS-"
+    url_template: "https://jira.rccl.com/browse/HOS-<num>"
+  - key_prefix: "OBRI-"
+    url_template: "https://jira.rccl.com/browse/OBRI-<num>"
+  - key_prefix: "GROW-"
+    url_template: "https://jira.rccl.com/browse/GROW-<num>"
+
+validator:
+  pattern: "[a-zA-Z0-9_-]+"
