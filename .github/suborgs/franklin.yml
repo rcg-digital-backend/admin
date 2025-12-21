@@ -61,13 +61,13 @@ rulesets:
           - rel/*
     bypass_actors:
       - actor_type: RepositoryRole
-        actor_id: admin
+        actor_id: 5 # admin role
         bypass_mode: always
       - actor_type: Team
-        actor_id: hybris-leads
+        actor_id: 7737774 # hybris-leads
         bypass_mode: always
       - actor_type: Integration
-        actor_id: 127404092
+        actor_id: 127404092 # rccl-github
         bypass_mode: always
     rules:
       - type: pull_request
@@ -76,9 +76,10 @@ rulesets:
           dismiss_stale_reviews_on_push: true
           require_code_owner_review: true
           require_last_push_approval: true
+          required_review_thread_resolution: true
       - type: required_status_checks
         parameters:
-          strict_required_status_checks: true
+          strict_required_status_checks_policy: true
           required_status_checks: []
 
 autolinks:
