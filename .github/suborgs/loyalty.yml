@@ -1,11 +1,10 @@
 suborgrepos:
-  - franklin.*
+  - blockloyalty.*
 
 repository:
   auto_init: true
-  topics: [backend, commerce, dcx, hybris, services, franklin]
+  topics: [backend, casino, cobrand, guest, loyalty, services]
   private: true
-  visibility: private
   has_issues: true
   has_projects: false
   has_wiki: true
@@ -24,27 +23,36 @@ labels:
       color: "#336699"
       description: A label for a feature.
   exclude:
-    - name: ^commerce-
+    - name: ^guest-
+    - name: ^crew-
 
 teams:
-  - name: hybris
-    permission: push
-  - name: hybris-admins-ad-sync
-    permission: admin
-  - name: hybris-developers-ad-sync
-    permission: push
-  - name: hybris-collaborators
-    permission: push
-  - name: automation
+  - name: backend-guest
     permission: pull
   - name: backend-guest-admins
     permission: admin
+  - name: backend-guest-leads
+    permission: admin
+  - name: backend-guest-managers
+    permission: admin
   - name: backend-guest-devs
     permission: push
+  - name: automation
+    permission: pull
+  - name: connected-ship
+    permission: pull
   - name: guardians
+    permission: pull
+  - name: hybris
+    permission: pull
+  - name: megatron-web
     permission: push
+  - name: mobile
+    permission: pull
   - name: service-accounts
     permission: pull
+  - name: platform
+    permission: push
 
 rulesets:
   - name: "Protect Long-living Branches"
@@ -64,7 +72,7 @@ rulesets:
         actor_id: 5 # admin role
         bypass_mode: always
       - actor_type: Team
-        actor_id: 7737774 # hybris-leads
+        actor_id: 13570522 # backend-guest-admins
         bypass_mode: always
       - actor_type: Integration
         actor_id: 127404092 # rccl-github
@@ -83,20 +91,10 @@ rulesets:
           required_status_checks: []
 
 autolinks:
-  - key_prefix: "HYBRIS-"
-    url_template: "https://jira.rccl.com/browse/HYBRIS-<num>"
-  - key_prefix: "ONVAC-"
-    url_template: "https://jira.rccl.com/browse/ONVAC-<num>"
-  - key_prefix: "MYC-"
-    url_template: "https://jira.rccl.com/browse/MYC-<num>"
+  - key_prefix: "LOY-"
+    url_template: "https://jira.rccl.com/browse/LOY-<num>"
   - key_prefix: "RTB-"
     url_template: "https://jira.rccl.com/browse/RTB-<num>"
-  - key_prefix: "HOS-"
-    url_template: "https://jira.rccl.com/browse/HOS-<num>"
-  - key_prefix: "OBRI-"
-    url_template: "https://jira.rccl.com/browse/OBRI-<num>"
-  - key_prefix: "GROW-"
-    url_template: "https://jira.rccl.com/browse/GROW-<num>"
 
 validator:
   pattern: "[a-zA-Z0-9_-]+"
