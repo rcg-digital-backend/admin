@@ -1,0 +1,100 @@
+suborgrepos:
+  - blockloyalty.*
+
+repository:
+  auto_init: true
+  topics: [backend, casino, cobrand, guest, loyalty, services]
+  private: true
+  has_issues: true
+  has_projects: false
+  has_wiki: true
+  allow_squash_merge: false
+  allow_merge_commit: true
+  allow_rebase_merge: false
+  allow_auto_merge: false
+  delete_branch_on_merge: true
+
+labels:
+  include:
+    - name: bugfix
+      color: '#CC0000'
+      description: A label for a bug.
+    - name: feature
+      color: "#336699"
+      description: A label for a feature.
+  exclude:
+    - name: ^guest-
+    - name: ^crew-
+
+teams:
+  - name: backend-guest
+    permission: pull
+  - name: backend-guest-admins
+    permission: admin
+  - name: backend-guest-leads
+    permission: admin
+  - name: backend-guest-managers
+    permission: admin
+  - name: backend-guest-devs
+    permission: push
+  - name: automation
+    permission: pull
+  - name: connected-ship
+    permission: pull
+  - name: guardians
+    permission: pull
+  - name: hybris
+    permission: pull
+  - name: megatron-web
+    permission: push
+  - name: mobile
+    permission: pull
+  - name: service-accounts
+    permission: pull
+  - name: platform
+    permission: push
+
+rulesets:
+  - name: "Protect Long-living Branches"
+    target: branch
+    enforcement: active
+    conditions:
+      ref_name:
+        include:
+          - main
+          - main-*
+          - develop
+          - develop-*
+          - release/*
+          - rel/*
+    bypass_actors:
+      - actor_type: RepositoryRole
+        actor_id: 5 # admin role
+        bypass_mode: always
+      - actor_type: Team
+        actor_id: 13570522 # backend-guest-admins
+        bypass_mode: always
+      - actor_type: Integration
+        actor_id: 127404092 # rccl-github
+        bypass_mode: always
+    rules:
+      - type: pull_request
+        parameters:
+          required_approving_review_count: 2
+          dismiss_stale_reviews_on_push: true
+          require_code_owner_review: true
+          require_last_push_approval: true
+          required_review_thread_resolution: true
+      - type: required_status_checks
+        parameters:
+          strict_required_status_checks_policy: true
+          required_status_checks: []
+
+autolinks:
+  - key_prefix: "LOY-"
+    url_template: "https://jira.rccl.com/browse/LOY-<num>"
+  - key_prefix: "RTB-"
+    url_template: "https://jira.rccl.com/browse/RTB-<num>"
+
+validator:
+  pattern: "[a-zA-Z0-9_-]+"
