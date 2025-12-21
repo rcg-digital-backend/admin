@@ -1,70 +1,111 @@
-name: Repo Prefix Report
+name: List Repos by Suborg
 
 on:
   workflow_dispatch:
+    inputs:
+      suborg:
+        description: 'Select a suborg to list repositories'
+        required: true
+        type: choice
+        options:
+          - automation
+          - cs
+          - database
+          - esl
+          - guardians
+          - guest
+          - Hybris
+          - iam
+          - loyalty
+          - payment
+          - platform
+          - shipboard
+          - ssh
+          - unassigned
 
 jobs:
-  find-repos:
+  list-repos:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Find repos with prefixes
+      
+      - name: Install yq
+        run: |
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+      
+      - name: List repositories for suborg
         env:
           GH_TOKEN: ${{ secrets.COMMONS_ORG_PAT }}
+          SUBORG: ${{ github.event.inputs.suborg }}
         run: |
-          PREFIXES=(
-            "commons."
-            "megatron.common"
-            "construct."
-            "content-services"
-            "megatron.content-services"
-            "core"
-            "megatron.core"
-            "digital-checkin"
-            "megatron.digital-checkin"
-            "digital-concierge"
-            "megatron.digital-concierge"
-            "digital-photo"
-            "megatron.photo"
-            "digital-shoreex."
-            "megatron.digital-shoreex."
-            "employee"
-            "megatron.employee"
-            "guest-accounts."
-            "megatron.guest-accounts"
-            "guest-checkin."
-            "megatron.guest-checkin"
-            "guest-request."
-            "megatron.guest-request."
-            "kids-club"
-            "megatron.kids-club"
-            "notifications"
-            "megatron.notifications"
-            "shipboard-programming-tool."
-            "vape"
-            "megatron.vape"
-            "virtual-queue"
-            "megatron.virtual-queue"
-            "wearables"
-            "megatron.wearables"
-            "megatron.ai-data"
-            "megatron.digital-messaging"
-            "megatron.employee.test"
-          )
           ORG="rcg-digital-backend"
-
-          echo "Matching repositories:" > repo-report.txt
-          gh repo list "$ORG" --limit 1500 --json name -q '.[].name' | while read -r repo; do
-            for prefix in "${PREFIXES[@]}"; do
-              if [[ "$repo" == $prefix* ]]; then
-                echo "$repo" >> repo-report.txt
-                break
-              fi
+          
+          echo "Fetching all repositories from $ORG..."
+          gh repo list "$ORG" --limit 1500 --json name -q '.[].name' | sort > all-repos.txt
+          
+          if [ "$SUBORG" == "unassigned" ]; then
+            echo "Finding unassigned repositories..."
+            
+            # Collect all patterns from all suborg files
+            > all-patterns.txt
+            for file in .github/suborgs/*.yml; do
+              yq eval '.suborgrepos[]' "$file" 2>/dev/null >> all-patterns.txt || true
             done
-          done
+            
+            # Filter repositories that don't match any pattern
+            > matched-repos.txt
+            while IFS= read -r repo; do
+              matched=false
+              while IFS= read -r pattern; do
+                # Convert glob pattern to regex-like matching
+                if [[ "$repo" == $pattern ]]; then
+                  matched=true
+                  break
+                fi
+              done < all-patterns.txt
+              
+              if [ "$matched" = false ]; then
+                echo "$repo" >> matched-repos.txt
+              fi
+            done < all-repos.txt
+            
+            echo "Unassigned repositories (alphabetically sorted):" > repo-report.txt
+            cat matched-repos.txt >> repo-report.txt
+          else
+            echo "Processing suborg: $SUBORG"
+            SUBORG_FILE=".github/suborgs/${SUBORG}.yml"
+            
+            if [ ! -f "$SUBORG_FILE" ]; then
+              echo "Error: Suborg file not found: $SUBORG_FILE" > repo-report.txt
+              exit 1
+            fi
+            
+            # Extract suborgrepos patterns from the YAML file
+            yq eval '.suborgrepos[]' "$SUBORG_FILE" > patterns.txt
+            
+            # Match repositories against patterns
+            > matched-repos.txt
+            while IFS= read -r repo; do
+              while IFS= read -r pattern; do
+                if [[ "$repo" == $pattern ]]; then
+                  echo "$repo" >> matched-repos.txt
+                  break
+                fi
+              done < patterns.txt
+            done < all-repos.txt
+            
+            # Sort and output
+            echo "Repositories matching suborg '$SUBORG' (alphabetically sorted):" > repo-report.txt
+            sort matched-repos.txt >> repo-report.txt
+          fi
+          
+          echo "Results:"
+          cat repo-report.txt
+      
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
         with:
-          name: repo-prefix-report
+          name: repos-${{ github.event.inputs.suborg }}
           path: repo-report.txt
