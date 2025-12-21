@@ -6,7 +6,7 @@ This repository manages the Safe Settings configs that are applied to an entire 
 
 ### `.github/settings.yml`
 
-These are organization-wide settings to apply on everyone in this organization. *We do not use this typically. We govern by `suborgs`.*
+These are organization-wide settings to apply to everyone in this organization. *We do not use this typically. We govern by `suborgs`.*
 
 https://github.com/github/safe-settings/blob/a427c01bfa6cc1687d57918ab0293d05fa272baf/docs/sample-settings/settings.yml
 
